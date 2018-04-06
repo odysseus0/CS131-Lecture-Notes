@@ -1,3 +1,12 @@
+(* 
+Please note that some of the expressions in this file
+are intentionally wrong so as to illustrate what you CANNOT
+do in OCaml. They are equally valuable as other examples.
+
+To get the most out of this file, please execute them all 
+in your OCaml interpreter.
+*)
+
 (* Variable Declaration *)
 let x = 5;;
 let x = "hi";;
