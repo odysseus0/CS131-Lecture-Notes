@@ -159,9 +159,10 @@
   * Keyword
     * Can be reserved, that is, it cannot be assigned to other values
     * Can cause compatibility issues
-      * Adding new keywords can cause older programs who initialized keywords to break
+      * Adding new keywords can cause older programs who initialized them to break
       * `class` is not a keyword in C but is one in C++
       * It is valid to use `class` as a varaible name in C, but not in C++.
+      * C++ compiler is supposed to be backward compatible with C programs. That is, it should be able to compile valid C programs. However, if we reserve the keywords, there is no way for it to compile a C program that assigned `class` as a variable.
 
 ## Grammar
 
