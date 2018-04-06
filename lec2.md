@@ -99,7 +99,7 @@
     * case-sensitive?
     * white space allowed?
       * Fortran allows white space in identifier
-      * Made rocket exploded
+      * Made rocket explode
       * Puntch card worker mistakenly typed `,` as `.`
 
         ```Fortran
