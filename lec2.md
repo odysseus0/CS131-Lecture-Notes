@@ -100,7 +100,7 @@
     * white space allowed?
       * Fortran allows white space in identifier
       * Made rocket explode
-      * Puntch card worker mistakenly typed `,` as `.`
+      * Punch card worker mistakenly typed `,` as `.`
 
         ```Fortran
         DO 10 I=1,10
