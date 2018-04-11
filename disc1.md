@@ -27,4 +27,10 @@
 - Interpreter
   - Can use compiler
 - Strongly typed
-
+- How include files
+  - `#use "hw1.ml`
+- Types
+  - int
+  - bool
+  - float
+  - string
