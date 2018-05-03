@@ -115,4 +115,4 @@ o.locked = false; // must be atomic
 
 ## Reorder table
 
-![JMM](JMMtable.png)
+![JMM](JMM-table.png)
