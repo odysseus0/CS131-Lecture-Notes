@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>lec2</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/georgezhang/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.3.4/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <h1 class="mume-header" id="lecture-2">Lecture 2</h1>
+
+<h2 class="mume-header" id="scaling">Scaling</h2>
+
+<ul>
+<li>size of problems</li>
+<li>size of programs</li>
+<li>size of developer population</li>
+</ul>
+<h2 class="mume-header" id="evolution">Evolution</h2>
+
+<ul>
+<li>
+<p>Some History</p>
+<ul>
+<li>C on PDP-11 (1970s)</li>
+<li>4 microseconds to add</li>
+<li>1.2 microseconds memory cycle time</li>
+<li>memory access is faster than CPU</li>
+<li>Therefore, C makes pointer dereference very convenient.</li>
+<li>Nowadays, memory access is about 2 order of magnitude slower than CPU.</li>
+</ul>
+</li>
+<li>
+<p>C has evolved</p>
+<ul>
+<li>one way is to change the language.</li>
+<li>For example, adding inline functionality in C11 standard</li>
+<li>However, some compilers still have not implemented the feature</li>
+<li>How to evolve faster?</li>
+</ul>
+</li>
+<li>
+<p>Example: C source code in Emacs. Trying to apply a function to 7 elements.</p>
+<pre data-role="codeBlock" data-info="C" class="language-c">Obj args<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+args<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> exp0<span class="token punctuation">;</span>
+args<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> exp1<span class="token punctuation">;</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token function">Foo</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// apply a function to all elements in an array of size 7</span>
+</pre><ul>
+<li>
+<p>Can be error prone. Not so convenient. Create a way to apply a function to multiple elements in a convenient way.</p>
+<ul>
+<li>
+<p>Want to write it in a syntax similar to</p>
+<pre data-role="codeBlock" data-info="C" class="language-c"><span class="token function">Foo</span><span class="token punctuation">(</span>exp0<span class="token punctuation">,</span> exp1<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+</pre></li>
+</ul>
+</li>
+<li>
+<p>Solution: Macro that computes the elements in the array. Function won't do.</p>
+<pre data-role="codeBlock" data-info="C" class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> ELTS(a) \ (sizeof(a) / sizeof(*(a)))</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> CALLMANY(f, args) \ ((f) (ELTS(args), args))</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> CALLN(f, ...) \ CALLMANY(f, (Obj[]) {__VA_ARGS__})</span>
+</pre></li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="syntax">Syntax</h2>
+
+<ul>
+<li>form (syntax) is independent from meaning (semantics)</li>
+<li>Syntax is easy. Semantics is hard.</li>
+<li>The first successful theoretical invention in computer science that brings recognition in academia.</li>
+<li>Sentence can be syntactically correct but meaningless.
+<ul>
+<li>&quot;Colorless green ideas sleep furiously&quot; - N. Chomsky</li>
+</ul>
+</li>
+<li>Syntax can be harder than you think
+<ul>
+<li>&quot;Ireland has leprechauns galore.&quot; - P. Eggert</li>
+<li>galore is postpositive</li>
+</ul>
+</li>
+<li>A sentence can be both syntactically and semantically ambiguous
+<ul>
+<li>&quot;Time Flies&quot;</li>
+<li>Noun + Verb</li>
+<li>Verb + Noun</li>
+</ul>
+</li>
+<li>Reason to prefer one syntax to another
+<ul>
+<li>Inertia: make it similar to what people are used to</li>
+<li>Simple &amp; Regular</li>
+<li>Two goals can conflict with each other
+<ul>
+<li>What people are used to are not typically the simplest
+<ul>
+<li>Reverse Polish Notation is simpler but not widely used</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Readability
+<ul>
+<li>
+<p>Liebnitz's Criterion: A proposition's form should mirror objective reality</p>
+<pre data-role="codeBlock" data-info="C" class="language-c">i <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> i <span class="token operator">&lt;</span> n
+<span class="token number">0</span> <span class="token operator">&lt;=</span> i <span class="token operator">&amp;&amp;</span> i <span class="token operator">&lt;</span> n
+</pre></li>
+<li>
+<p>The second one is better. Corresponds better to mental picture of number line, that the smaller number is on the left while bigger one is on the right.</p>
+</li>
+</ul>
+</li>
+<li>&quot;Writability&quot; (Concise)
+<ul>
+<li>Might conflict with readable goal</li>
+<li>One-liner is easy to write but hard to read</li>
+</ul>
+</li>
+<li>It's redundant
+<ul>
+<li>Double check unintended mistakes</li>
+</ul>
+</li>
+<li>It's unambiguous</li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="different-parts-of-syntax">Different parts of syntax</h2>
+
+<ul>
+<li>Program structure (Big Syntax)
+<ul>
+<li>C: source code file, header file, include, linker</li>
+</ul>
+</li>
+<li>Fun part</li>
+<li>Tokenization / Lexical Analysis
+<ul>
+<li>
+<p>What your character set is</p>
+<ul>
+<li>Traditionally: ASCII, 7 bits</li>
+<li>Now: UTF-8, 1 to 4 bytes
+<ul>
+<li>Controversial</li>
+<li>Similarly looking characters with different byte representation can cause confusion and even be used for malicious purposes.
+<ul>
+<li><a href="https://microsoft.com">https://microsoft.com</a> (Replace o wiht Swahili o)</li>
+<li><code>typedef long int</code> (Replace i with Turkish lower-case i)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Identifiers</p>
+<ul>
+<li><code>[A-Za-z][A-Za-z0-9]*</code></li>
+<li>case-sensitive?</li>
+<li>white space allowed?
+<ul>
+<li>
+<p>Fortran allows white space in identifier</p>
+</li>
+<li>
+<p>Made rocket explode</p>
+</li>
+<li>
+<p>Punch card worker mistakenly typed <code>,</code> as <code>.</code></p>
+<pre data-role="codeBlock" data-info="Fortran" class="language-fortran"><span class="token keyword">DO</span> <span class="token number">10</span> I<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">10</span>
+  <span class="token keyword">CALL</span> FOO<span class="token punctuation">(</span>I<span class="token punctuation">)</span>
+
+DO10I <span class="token operator">=</span> <span class="token number">1.10</span>
+...
+</pre></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Numbers</p>
+<pre data-role="codeBlock" data-info="C" class="language-c"><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">217473848</span><span class="token punctuation">;</span>
+</pre><ul>
+<li>
+<p>The number is treated as two tokens. <code>-</code> is the first part and the positive number is the second number.</p>
+</li>
+<li>
+<p><code>-217473848</code> is the negation of an unsigned number with value <code>21743848</code>.</p>
+</li>
+<li>
+<p>Assigning an unsigned number bigger than the largest signed number is implementation dependent.</p>
+<pre data-role="codeBlock" data-info="C" class="language-c"><span class="token operator">-</span><span class="token number">217473848</span> <span class="token operator">&lt;</span> <span class="token number">0</span>
+<span class="token comment" spellcheck="true">// is evaluated as</span>
+<span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">217473848</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+</pre></li>
+</ul>
+</li>
+<li>
+<p>Operators</p>
+<ul>
+<li>
+<p><code>= + x / ++</code></p>
+</li>
+<li>
+<p>Tokenization is greedy</p>
+<pre data-role="codeBlock" data-info="C" class="language-c">a<span class="token operator">++</span><span class="token operator">+</span>b
+<span class="token comment" spellcheck="true">// is evaluated as</span>
+a<span class="token operator">++</span> <span class="token operator">+</span> b
+<span class="token comment" spellcheck="true">// not as</span>
+a <span class="token operator">+</span> <span class="token operator">++</span>b
+</pre></li>
+</ul>
+</li>
+<li>
+<p>Comments</p>
+<ul>
+<li>
+<p><code>/* ... */</code></p>
+<ul>
+<li>Does it nest?</li>
+<li>Not in C</li>
+</ul>
+</li>
+<li>
+<p><code>// ...</code></p>
+</li>
+<li>
+<p>Ugly example</p>
+<pre data-role="codeBlock" data-info="C" class="language-c"><span class="token keyword">int</span> x<span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+x <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// What is this @*??/</span>
+y <span class="token operator">=</span> x <span class="token operator">+</span> <span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token function">print</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><ul>
+<li>Somehow <code>y = x + 5</code> is skipped</li>
+<li>It turned out that <code>??/</code> is a trigraph that is automatically replaced as <code>\</code>.</li>
+<li>As a result, the newline character at the end of the comment is omitted, and the next line is treated as part of the comment</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Keyword</p>
+<ul>
+<li>Can be reserved, that is, it cannot be assigned to other values</li>
+<li>Can cause compatibility issues
+<ul>
+<li>Adding new keywords can cause older programs who initialized them to break</li>
+<li><code>class</code> is not a keyword in C but is one in C++</li>
+<li>It is valid to use <code>class</code> as a varaible name in C, but not in C++.</li>
+<li>C++ compiler is supposed to be backward compatible with C programs. That is, it should be able to compile valid C programs. However, if we reserve the keywords, there is no way for it to compile a C program that assigned <code>class</code> as a variable.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="grammar">Grammar</h2>
+
+<ul>
+<li>Components
+<ul>
+<li>Token (Terminal Symbol)
+<ul>
+<li>Definition: Member of a finite set</li>
+<li>When defining grammar, we need to decide which set of terminal symbols to cover.</li>
+</ul>
+</li>
+<li>String: Finite sequence of tokens</li>
+<li>Language: set of strings</li>
+<li>Sentence: member of a langauge</li>
+</ul>
+</li>
+<li>Because langauge is usually infinite, we cannot list all of them. So we need some kind of notation for it.
+<ul>
+<li>Regular expression is not powerful enough</li>
+</ul>
+</li>
+<li>Context-free Grammar
+<ul>
+<li>
+<p>Finite set of production rules, each of which in the form <code>nonterminal -&gt; symbol*</code>, where symbol can be either terminal or nonterminal.</p>
+</li>
+<li>
+<p>Start symbol (nonterminal)</p>
+</li>
+<li>
+<p>set of terminals</p>
+</li>
+<li>
+<p>set of nonterminals</p>
+</li>
+<li>
+<p>Example:</p>
+<pre data-role="codeBlock" data-info="txt" class="language-txt"><code>// Production rules
+S -&gt; NP VP
+NP -&gt; n
+NP -&gt; adj NP
+VP -&gt; v
+VP -&gt; VP adv
+
+// Start symbol
+S
+
+// Nonterminals
+S NP VP
+
+// Terminals
+n adj adv v
+
+// Production example
+S
+NP VP
+NP VP adv
+adj NP VP adv adv
+adj NP VP adv adv
+adj n VP adv adv
+adj n v adv adv
+</code></pre></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a href="#lecture-2">Lecture 2</a>
+<ul>
+<li><a href="#scaling">Scaling</a></li>
+<li><a href="#evolution">Evolution</a></li>
+<li><a href="#syntax">Syntax</a></li>
+<li><a href="#different-parts-of-syntax">Different parts of syntax</a></li>
+<li><a href="#grammar">Grammar</a></li>
+</ul>
+</li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">≡</a>
+    </body>
+    
+    
+    
+    
+    
+    
+    <script>
+(function bindTaskListEvent() {
+  var taskListItemCheckboxes = document.body.getElementsByClassName('task-list-item-checkbox')
+  for (var i = 0; i < taskListItemCheckboxes.length; i++) {
+    var checkbox = taskListItemCheckboxes[i]
+    var li = checkbox.parentElement
+    if (li.tagName !== 'LI') li = li.parentElement
+    if (li.tagName === 'LI') {
+      li.classList.add('task-list-item')
+    }
+  }
+}())    
+</script>
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  </html>

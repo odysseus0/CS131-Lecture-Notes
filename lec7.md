@@ -1,4 +1,4 @@
-# Lecture 8: Parametric Polymorphism
+# Lecture 7: Parametric Polymorphism
 
 * Template
   * Generate a new copy of the function/class with the type variables substituted with the chosen type.
