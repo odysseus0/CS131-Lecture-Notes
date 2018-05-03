@@ -112,3 +112,7 @@ this.locked = true; // must be atomic
 ox = oy + 1;
 o.locked = false; // must be atomic
 ```
+
+## Reorder table
+
+![JMM](JMMtable.png)
