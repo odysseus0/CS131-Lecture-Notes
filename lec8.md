@@ -26,6 +26,8 @@ Credit: I was not on campus for this lecture. The note is based on the awesome p
   * Advantage
     * Compiler knows that the method cannot be overridden
     * For code like `final int baz() { return 0; }`, automatic inlining will also become possible.
+  * WARNING
+    * If a final variable refers to an object, it only implies that it cannot be reassigned and refer to another object. It is still allowed to change the content of the object referred to.
 
 ## Object Class API
 
@@ -44,7 +46,6 @@ Credit: I was not on campus for this lecture. The note is based on the awesome p
   class c {
   public int hashCode { return 0; } //Then all objects of class C is going to
   }
-
   ```
 
   * Object class is the root of the class hierarchy.
