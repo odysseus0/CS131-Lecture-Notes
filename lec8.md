@@ -1,5 +1,7 @@
 # Lecture 8
 
+Credit: I was not on campus for this lecture. The note is based on the awesome personal note of Alex Oh. Thank you Alex!
+
 ## Java Class vs. Interface
 
 * Syntax
