@@ -71,7 +71,7 @@ The Prolog interpreter does a left-first depth-first search. As a result, the ne
 
 ## Interpretation of Prolog Program
 
-Ask Prolog interpreter `append(A, B, [1,2,3])` and see what happens. Try to figure out how internally it works to generate all the results. Then run it in [Prolog Visualizer]9http://www.cdglabs.org/prolog/#/) to see exactly what happened.
+Ask Prolog interpreter `append(A, B, [1,2,3])` and see what happens. Try to figure out how internally it works to generate all the results. Then run it in [Prolog Visualizer](http://www.cdglabs.org/prolog/#/) to see exactly what happened.
 
 ```prolog
 member(X, [X|_]).
