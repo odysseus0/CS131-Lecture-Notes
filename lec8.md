@@ -169,7 +169,7 @@ Eggert says: `wait` and `notify` are receipts for mistakes!
 
 ### Other methods
 
-For the topics on `Exchanger`, `CountDownLatch`, and `Cyclicbarrier`, please read the amazing tutorials by Jakob Jenkov. Here are the links:
+For the topics on `Exchanger`, `CountDownLatch`, and `CyclicBarrier`, please read the amazing tutorials by Jakob Jenkov. Here are the links:
 
 * [Exchanger](http://tutorials.jenkov.com/java-util-concurrent/exchanger.html)
 * [CountDownLatch](http://tutorials.jenkov.com/java-util-concurrent/countdownlatch.html)
